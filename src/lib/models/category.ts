@@ -1,5 +1,5 @@
 import { Schema, model, models } from "mongoose";
-const schema = new Schema({
+export const schema = new Schema({
   category: {
     type: String,
     required: [true, "category is required"],
