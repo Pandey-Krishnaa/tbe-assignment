@@ -1,5 +1,6 @@
 // @ts-nocheck
 "use client";
+import { getAllCategoies } from "@/lib/actions/category";
 import { addExpense } from "@/lib/actions/expense";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
@@ -7,14 +8,22 @@ type categoryType = {
   _id: string;
   category: string;
 };
-function AddExpenseForm({ categories }: { categories: categoryType[] }) {
+function AddExpenseForm() {
   const [data, setData] = useState({});
   const router = useRouter();
+  const [categories, setCategories] = useState<categoryType[]>([]);
 
   useEffect(() => {
-    if (categories.length > 0)
-      setData({ ...data, category: categories[0]._id });
-  }, [categories]);
+    async function init() {
+      try {
+        const data = await getAllCategoies();
+        setCategories(data);
+      } catch (error) {
+        alert("something went wrong");
+      }
+    }
+    init();
+  }, []);
   const submitHandler = async () => {
     try {
       if (

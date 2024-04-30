@@ -12,7 +12,7 @@ async function page() {
     result = await getAllCategoies();
     console.log(result);
   } catch (error) {}
-  return <AddExpenseForm categories={result || []} />;
+  return <AddExpenseForm />;
 }
 
 export default page;
