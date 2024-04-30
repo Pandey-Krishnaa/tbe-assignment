@@ -1,7 +1,6 @@
 "use server";
-
-import { connectToDatabase } from "../db/mongoose";
 import expense from "./../models/expense";
+import { connectToDatabase } from "../db/mongoose";
 
 export const addExpense = async (data: any) => {
   try {
