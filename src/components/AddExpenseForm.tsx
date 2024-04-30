@@ -12,12 +12,12 @@ function AddExpenseForm() {
   const [data, setData] = useState({});
   const router = useRouter();
   const [categories, setCategories] = useState<categoryType[]>([]);
-
   useEffect(() => {
     async function init() {
       try {
         const data = await getAllCategoies();
         setCategories(data);
+        if (data.length > 0) setData({ ...data, category: data[0]._id });
       } catch (error) {
         alert("something went wrong");
       }
