@@ -1,7 +1,6 @@
 "use server";
 import category from "../models/category";
 import { connectToDatabase } from "../db/mongoose";
-import category from "../models/category";
 
 export const addCategory = async (cat: string) => {
   try {
