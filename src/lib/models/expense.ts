@@ -1,4 +1,5 @@
 import mongoose, { model, models } from "mongoose";
+import category from "./category";
 const schema = new mongoose.Schema({
   description: {
     type: String,

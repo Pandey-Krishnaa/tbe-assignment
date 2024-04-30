@@ -32,7 +32,7 @@ function AllExpenses() {
             key={data._id}
             description={data.description}
             amount={data.amount}
-            category={data.category.category}
+            category={data?.category?.category}
             expenseId={data._id}
             date={data.date}
           />
