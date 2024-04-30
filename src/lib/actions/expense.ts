@@ -1,5 +1,5 @@
 "use server";
-import category, { schema, schema } from "../models/category";
+import category, { schema } from "../models/category";
 import expense from "./../models/expense";
 
 import { connectToDatabase } from "../db/mongoose";
