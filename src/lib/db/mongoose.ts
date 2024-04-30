@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
-
+import category from "../models/category";
+import expense from "../models/expense";
 let isConnected: boolean = false;
 
 export const connectToDatabase = async () => {
